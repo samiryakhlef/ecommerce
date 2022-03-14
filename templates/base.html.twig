@@ -3,17 +3,38 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>
-			{% block title %}Welcome!
-			{% endblock %}
+			{% block title %}Accueil{% endblock %}
+			
 		</title>
-		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>"> 
-        
-        {% block stylesheets %}{% endblock %}
-        
-        
-        {% block javascripts %}{% endblock %}
-		</head>
-		<body>
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+		<meta
+		name="viewport" content="width=device, initial-scale=1.0">
+
+		{# feuilles de styles #}
+
+		<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}"> {% block stylesheets %}{% endblock %}
+
+		<link
+		rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
+
+		{# fichiers JS #}
+		<script src="{{ asset('assets/js/bootstrap.bundle.js') }}" defer></script>
+
+		{% block javascripts %}{% endblock %}
+
+		<script src="{{ asset('assets/js/scripts.js') }}" defer></script>
+	</head>
+
+	
+	<body>
+
+	{#--navbar--#}
+		{% include "_partials/_nav.html.twig" %}
+
 			{% block body %}{% endblock %}
-		</body>
-	</html>
+
+	{#--footer--#}
+		{% include "_partials/_footer.html.twig" %}
+	</body>
+
+</html>
