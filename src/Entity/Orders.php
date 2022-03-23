@@ -22,10 +22,10 @@ class Orders
     'CURRENT_TIMESTAMP'])]
     private $created_at;
 
-    #[ORM\ManyToOne(targetEntity: coupons::class, inversedBy: 'orders')]
+    #[ORM\ManyToOne(targetEntity: Coupons::class, inversedBy: 'orders')]
     private $coupons;
 
-    #[ORM\ManyToOne(targetEntity: users::class, inversedBy: 'orders')]
+    #[ORM\ManyToOne(targetEntity: Users::class, inversedBy: 'orders')]
     #[ORM\JoinColumn(nullable: false)]
     private $users;
 
