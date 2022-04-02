@@ -7,7 +7,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
-#[Route('/amdin/utilisateurs', name: 'admin_users_')]
+#[Route('/admin/utilisateurs', name: 'admin_users_')]
 class UsersController extends AbstractController
 {
     #[Route('/', name: 'index')]
